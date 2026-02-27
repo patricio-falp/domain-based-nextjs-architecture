@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "first_name": "MARÍA",
+      "last_name": "GONZÁLEZ",
+      "rut": "12.345.678-9",
+      "date_of_birth": "1975-03-15",
+      "status": "active",
+      "diagnosis": "Cáncer de mama",
+      "last_visit": "2026-02-20",
+      "treating_physician": "Dr. Rodríguez"
+    },
+    {
+      "id": "2",
+      "first_name": "JUAN",
+      "last_name": "PÉREZ",
+      "rut": "9.876.543-2",
+      "date_of_birth": "1960-07-22",
+      "status": "pending",
+      "diagnosis": "Linfoma",
+      "last_visit": "2026-02-15",
+      "treating_physician": "Dra. Martínez"
+    },
+    {
+      "id": "3",
+      "first_name": "ANA",
+      "last_name": "LÓPEZ",
+      "rut": "15.234.567-K",
+      "date_of_birth": "1988-11-05",
+      "status": "discharged",
+      "diagnosis": "Cáncer de tiroides",
+      "last_visit": "2026-01-30",
+      "treating_physician": "Dr. Rodríguez"
+    },
+    {
+      "id": "4",
+      "first_name": "CARLOS",
+      "last_name": "MUÑOZ",
+      "rut": "11.111.111-1",
+      "date_of_birth": "1952-04-18",
+      "status": "active",
+      "diagnosis": "Cáncer de próstata",
+      "last_visit": "2026-02-24",
+      "treating_physician": "Dr. Silva"
+    },
+    {
+      "id": "5",
+      "first_name": "ROSA",
+      "last_name": "ÁLVAREZ",
+      "rut": "13.579.246-8",
+      "date_of_birth": "1970-09-30",
+      "status": "active",
+      "diagnosis": "Cáncer de colon",
+      "last_visit": "2026-02-22",
+      "treating_physician": "Dra. Martínez"
+    },
+    {
+      "id": "6",
+      "first_name": "PEDRO",
+      "last_name": "FERNÁNDEZ",
+      "rut": "8.642.135-7",
+      "date_of_birth": "1965-01-12",
+      "status": "pending",
+      "diagnosis": "Melanoma",
+      "last_visit": "2026-02-10",
+      "treating_physician": "Dr. Silva"
+    },
+    {
+      "id": "7",
+      "first_name": "CARMEN",
+      "last_name": "TORRES",
+      "rut": "16.802.357-3",
+      "date_of_birth": "1990-06-25",
+      "status": "discharged",
+      "diagnosis": "Cáncer cervicouterino",
+      "last_visit": "2026-01-15",
+      "treating_physician": "Dra. Martínez"
+    },
+    {
+      "id": "8",
+      "first_name": "LUIS",
+      "last_name": "RAMÍREZ",
+      "rut": "10.203.040-5",
+      "date_of_birth": "1958-08-03",
+      "status": "active",
+      "diagnosis": "Cáncer de pulmón",
+      "last_visit": "2026-02-26",
+      "treating_physician": "Dr. Rodríguez"
+    }
+  ],
+  "meta": {
+    "total": 8,
+    "page": 1,
+    "limit": 10
+  }
+}

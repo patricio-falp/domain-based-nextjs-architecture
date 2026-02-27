@@ -1,0 +1,335 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   Design System — FALP Brand
+   Primary: Azul FALP #003876  |  Accent: Dorado FALP #FDB913
+   Using CSS light-dark() function for automatic theme switching
+   ========================================================================== */
+
+:root {
+  /* Color scheme declaration for browser-level preference */
+  color-scheme: light dark;
+
+  /* Background colors - FALP palette */
+  --color-bg: light-dark(#ffffff, #0f1729);
+  --color-bg-subtle: light-dark(#f4f6fa, #0a1120);
+  --color-bg-muted: light-dark(#e8ecf4, #1a2540);
+  --color-bg-elevated: light-dark(#ffffff, #1e2d4d);
+
+  /* Interactive backgrounds - subtle hover states */
+  --color-bg-hover: light-dark(#dce3f0, #243352);
+  --color-bg-active: light-dark(#ced8ea, #2a3d60);
+
+  /* Foreground colors - high contrast text */
+  --color-fg: light-dark(#0f1729, #f0f2f7);
+  --color-fg-muted: light-dark(#4a5568, #94a3b8);
+  --color-fg-subtle: light-dark(#718096, #64748b);
+
+  /* Border colors - subtle */
+  --color-border: light-dark(#cbd5e1, #2d3f5e);
+  --color-border-muted: light-dark(#e2e8f0, #1e2d4d);
+
+  /* Primary colors (FALP Blue) */
+  --color-primary: light-dark(#003876, #4a90d9);
+  --color-primary-hover: light-dark(#002b5e, #6ba8e8);
+  --color-primary-muted: light-dark(#e8f0fa, #0d2240);
+  --color-primary-fg: light-dark(#ffffff, #ffffff);
+
+  /* Secondary colors (FALP Gold) */
+  --color-secondary: light-dark(#fdb913, #fdb913);
+  --color-secondary-hover: light-dark(#e5a510, #ffd04a);
+  --color-secondary-muted: light-dark(#fef8e1, #3d2e00);
+  --color-secondary-fg: light-dark(#003876, #0f1729);
+
+  /* Success colors (Green) */
+  --color-success: light-dark(#16a34a, #22c55e);
+  --color-success-hover: light-dark(#15803d, #4ade80);
+  --color-success-muted: light-dark(#dcfce7, #14532d);
+  --color-success-fg: light-dark(#14532d, #dcfce7);
+
+  /* Warning colors (Amber) */
+  --color-warning: light-dark(#d97706, #f59e0b);
+  --color-warning-hover: light-dark(#b45309, #fbbf24);
+  --color-warning-muted: light-dark(#fef3c7, #451a03);
+  --color-warning-fg: light-dark(#451a03, #fef3c7);
+
+  /* Error colors (Red) */
+  --color-error: light-dark(#dc2626, #ef4444);
+  --color-error-hover: light-dark(#b91c1c, #f87171);
+  --color-error-muted: light-dark(#fee2e2, #450a0a);
+  --color-error-fg: light-dark(#450a0a, #fee2e2);
+
+  /* Info colors (FALP Blue-tinted) */
+  --color-info: light-dark(#0369a1, #38bdf8);
+  --color-info-hover: light-dark(#075985, #7dd3fc);
+  --color-info-muted: light-dark(#e0f2fe, #0c2d48);
+  --color-info-fg: light-dark(#0c2d48, #e0f2fe);
+
+  /* Overlay */
+  --color-overlay: light-dark(rgba(0, 56, 118, 0.3), rgba(0, 0, 0, 0.6));
+
+  /* Shadows - light mode defaults (dark overrides below) */
+  --shadow-xs-val: 0 1px 2px 0 rgb(0 56 118 / 0.06);
+  --shadow-sm-val: 0 1px 2px 0 rgb(0 56 118 / 0.1), 0 1px 3px 1px rgb(0 56 118 / 0.06);
+  --shadow-md-val: 0 1px 2px 0 rgb(0 56 118 / 0.1), 0 2px 6px 2px rgb(0 56 118 / 0.06);
+  --shadow-lg-val: 0 1px 3px 0 rgb(0 56 118 / 0.1), 0 4px 8px 3px rgb(0 56 118 / 0.06);
+  --shadow-xl-val: 0 2px 4px 0 rgb(0 56 118 / 0.1), 0 6px 12px 4px rgb(0 56 118 / 0.06);
+
+  /* Focus ring */
+  --color-focus-ring: light-dark(#003876, #4a90d9);
+
+  /* Spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border radius - Modern rounded corners */
+  --radius-sm-val: 0.5rem;
+  --radius-md-val: 0.75rem;
+  --radius-lg-val: 1rem;
+  --radius-xl-val: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+
+  /* Z-index scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* ================================================================
+   Previous palette (Postman-inspired) — commented for reference
+   ================================================================
+
+:root {
+  --color-bg: light-dark(#ffffff, #212121);
+  --color-bg-subtle: light-dark(#f5f5f5, #1a1a1a);
+  --color-bg-muted: light-dark(#ebebeb, #2d2d2d);
+  --color-bg-elevated: light-dark(#ffffff, #383838);
+  --color-bg-hover: light-dark(#e0e0e0, #383838);
+  --color-bg-active: light-dark(#d5d5d5, #424242);
+  --color-fg: light-dark(#212121, #f5f5f5);
+  --color-fg-muted: light-dark(#6b6b6b, #a0a0a0);
+  --color-fg-subtle: light-dark(#8c8c8c, #757575);
+  --color-border: light-dark(#d5d5d5, #424242);
+  --color-border-muted: light-dark(#e5e5e5, #333333);
+  --color-primary: light-dark(#ff6c37, #ff6c37);
+  --color-primary-hover: light-dark(#e85a2a, #ff8c5a);
+  --color-primary-muted: light-dark(#fff1ec, #3d2a22);
+  --color-primary-fg: light-dark(#ffffff, #ffffff);
+  --color-secondary: light-dark(#6b6b6b, #a0a0a0);
+  --color-secondary-hover: light-dark(#525252, #b8b8b8);
+  --color-secondary-muted: light-dark(#f0f0f0, #333333);
+  --color-secondary-fg: light-dark(#ffffff, #1a1a1a);
+  --color-info: light-dark(#0891b2, #06b6d4);
+  --color-info-hover: light-dark(#0e7490, #22d3ee);
+  --color-info-muted: light-dark(#cffafe, #083344);
+  --color-info-fg: light-dark(#083344, #cffafe);
+  --color-overlay: light-dark(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  --color-focus-ring: light-dark(#3b82f6, #60a5fa);
+}
+
+*/
+
+/* Explicit light theme */
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Explicit dark theme */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --shadow-xs-val: 0 1px 2px 0 rgb(0 0 0 / 0.25);
+  --shadow-sm-val: 0 1px 2px 0 rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.2);
+  --shadow-md-val: 0 1px 2px 0 rgb(0 0 0 / 0.35), 0 2px 6px 2px rgb(0 0 0 / 0.2);
+  --shadow-lg-val: 0 1px 3px 0 rgb(0 0 0 / 0.35), 0 4px 8px 3px rgb(0 0 0 / 0.25);
+  --shadow-xl-val: 0 2px 4px 0 rgb(0 0 0 / 0.4), 0 6px 12px 4px rgb(0 0 0 / 0.3);
+}
+
+/* Dark shadows for system preference (no explicit data-theme) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --shadow-xs-val: 0 1px 2px 0 rgb(0 0 0 / 0.25);
+    --shadow-sm-val: 0 1px 2px 0 rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.2);
+    --shadow-md-val: 0 1px 2px 0 rgb(0 0 0 / 0.35), 0 2px 6px 2px rgb(0 0 0 / 0.2);
+    --shadow-lg-val: 0 1px 3px 0 rgb(0 0 0 / 0.35), 0 4px 8px 3px rgb(0 0 0 / 0.25);
+    --shadow-xl-val: 0 2px 4px 0 rgb(0 0 0 / 0.4), 0 6px 12px 4px rgb(0 0 0 / 0.3);
+  }
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg);
+  min-height: 100vh;
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-primary-muted);
+  color: var(--color-fg);
+}
+
+/* Scrollbar styling - subtle and minimal */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fg-subtle);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* ==========================================================================
+   Tailwind v4 Theme Extension
+   ========================================================================== */
+
+@theme {
+  /* Colors */
+  --color-background: var(--color-bg);
+  --color-background-subtle: var(--color-bg-subtle);
+  --color-background-muted: var(--color-bg-muted);
+  --color-background-elevated: var(--color-bg-elevated);
+  --color-background-hover: var(--color-bg-hover);
+  --color-background-active: var(--color-bg-active);
+
+  --color-foreground: var(--color-fg);
+  --color-foreground-muted: var(--color-fg-muted);
+  --color-foreground-subtle: var(--color-fg-subtle);
+
+  --color-border-default: var(--color-border);
+  --color-border-muted: var(--color-border-muted);
+
+  --color-primary-default: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-muted: var(--color-primary-muted);
+  --color-primary-foreground: var(--color-primary-fg);
+
+  --color-secondary-default: var(--color-secondary);
+  --color-secondary-hover: var(--color-secondary-hover);
+  --color-secondary-muted: var(--color-secondary-muted);
+  --color-secondary-foreground: var(--color-secondary-fg);
+
+  --color-success-default: var(--color-success);
+  --color-success-hover: var(--color-success-hover);
+  --color-success-muted: var(--color-success-muted);
+  --color-success-foreground: var(--color-success-fg);
+
+  --color-warning-default: var(--color-warning);
+  --color-warning-hover: var(--color-warning-hover);
+  --color-warning-muted: var(--color-warning-muted);
+  --color-warning-foreground: var(--color-warning-fg);
+
+  --color-error-default: var(--color-error);
+  --color-error-hover: var(--color-error-hover);
+  --color-error-muted: var(--color-error-muted);
+  --color-error-foreground: var(--color-error-fg);
+
+  --color-info-default: var(--color-info);
+  --color-info-hover: var(--color-info-hover);
+  --color-info-muted: var(--color-info-muted);
+  --color-info-foreground: var(--color-info-fg);
+
+  /* Shadows */
+  --shadow-xs: var(--shadow-xs-val);
+  --shadow-sm: var(--shadow-sm-val);
+  --shadow-md: var(--shadow-md-val);
+  --shadow-lg: var(--shadow-lg-val);
+  --shadow-xl: var(--shadow-xl-val);
+
+  /* Border Radius */
+  --radius-sm: var(--radius-sm-val);
+  --radius-md: var(--radius-md-val);
+  --radius-lg: var(--radius-lg-val);
+  --radius-xl: var(--radius-xl-val);
+
+  /* Font families */
+  --font-family-sans: var(--font-sans);
+  --font-family-mono: var(--font-mono);
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Not screen reader only */
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
